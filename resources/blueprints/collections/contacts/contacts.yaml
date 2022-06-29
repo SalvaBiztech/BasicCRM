@@ -1,0 +1,305 @@
+title: Contacts
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          width: 50
+          validate:
+            - required
+      -
+        handle: job_title
+        field:
+          input_type: text
+          antlers: false
+          display: 'Job Title'
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: email
+        field:
+          input_type: email
+          antlers: false
+          display: Email
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          validate:
+            - required
+      -
+        handle: phone
+        field:
+          input_type: tel
+          antlers: true
+          display: Phone
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: first_name
+        field:
+          input_type: text
+          antlers: false
+          display: 'First Name'
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: last_name
+        field:
+          input_type: text
+          antlers: false
+          display: 'Last Name'
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: address
+        field:
+          input_type: text
+          antlers: false
+          display: Address
+          type: text
+          icon: text
+          width: 66
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: region
+        field:
+          options:
+            Arusha: null
+            'Dar Es Saalam': null
+            Dodoma: null
+            Mwanza: null
+            Moshi: null
+          multiple: false
+          max_items: 1
+          clearable: true
+          searchable: true
+          taggable: true
+          push_tags: true
+          cast_booleans: false
+          display: Region
+          type: select
+          icon: select
+          width: 33
+          listable: hidden
+          instructions_position: above
+          read_only: false
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: owner
+        field:
+          type: users
+          display: Owner
+          default: current
+          localizable: true
+          max_items: 1
+          instructions_position: above
+          listable: hidden
+          read_only: false
+          mode: select
+      -
+        handle: sources
+        field:
+          type: terms
+          taxonomies:
+            - sources
+          display: Sources
+          mode: select
+      -
+        handle: stages
+        field:
+          type: terms
+          taxonomies:
+            - stages
+          display: Stages
+          mode: select
+      -
+        handle: statuses
+        field:
+          type: terms
+          taxonomies:
+            - statuses
+          display: Statuses
+          mode: select
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+  options:
+    display: Options
+    fields:
+      -
+        handle: company
+        field:
+          default: false
+          display: Company
+          type: toggle
+          icon: toggle
+          width: 25
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: deal
+        field:
+          default: false
+          display: Deal
+          type: toggle
+          icon: toggle
+          width: 25
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: ticket
+        field:
+          default: false
+          display: Ticket
+          type: toggle
+          icon: toggle
+          width: 25
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: attached
+        field:
+          default: false
+          display: Attached
+          type: toggle
+          icon: toggle
+          width: 25
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: companies_list
+        field:
+          display: 'Companies List'
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          if:
+            company: 'equals true'
+      -
+        handle: companies
+        field:
+          max_items: 5
+          mode: default
+          create: true
+          collections:
+            - companies
+          display: Companies
+          type: entries
+          icon: entries
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          if:
+            company: 'equals true'
+      -
+        handle: deals_list
+        field:
+          display: 'Deals List'
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          if:
+            deal: 'equals true'
+      -
+        handle: deals
+        field:
+          mode: default
+          create: true
+          display: Deals
+          type: entries
+          icon: entries
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          if:
+            deal: 'equals true'
+      -
+        handle: tickets_list
+        field:
+          display: 'Tickets List'
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          if:
+            ticket: 'equals true'
+      -
+        handle: tickets
+        field:
+          mode: default
+          create: true
+          display: Tickets
+          type: entries
+          icon: entries
+          instructions: 'Track the customer requests associated with this record.'
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          if:
+            ticket: 'equals true'
+      -
+        handle: attachments_list
+        field:
+          display: 'Attachments List'
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          if:
+            attached: 'equals true'
+      -
+        handle: attachments
+        field:
+          mode: list
+          container: assets
+          restrict: false
+          allow_uploads: true
+          show_filename: true
+          display: Attachments
+          type: assets
+          icon: assets
+          instructions: 'See the files attached to your activities or uploaded to this record.'
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          if:
+            attached: 'equals true'

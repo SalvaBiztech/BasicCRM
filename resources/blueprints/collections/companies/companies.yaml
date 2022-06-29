@@ -1,0 +1,218 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+          display: 'Company Name'
+          instructions_position: above
+          listable: hidden
+          read_only: false
+          input_type: text
+          antlers: false
+          width: 50
+      -
+        handle: domain_name
+        field:
+          input_type: text
+          antlers: false
+          display: 'Company Domain Name'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          width: 50
+      -
+        handle: email
+        field:
+          input_type: email
+          antlers: false
+          display: Email
+          type: text
+          icon: text
+          width: 33
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: phone
+        field:
+          input_type: number
+          antlers: false
+          display: Phone
+          type: text
+          icon: text
+          width: 33
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: city
+        field:
+          input_type: text
+          antlers: false
+          display: City
+          type: text
+          icon: text
+          width: 33
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: address
+        field:
+          input_type: text
+          antlers: false
+          display: Address
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: employees
+        field:
+          input_type: number
+          antlers: false
+          display: 'Number of Employees'
+          type: text
+          icon: text
+          width: 25
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: annual_revenue
+        field:
+          input_type: number
+          antlers: false
+          display: 'Annual Revenue'
+          type: text
+          icon: text
+          width: 25
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: description
+        field:
+          restrict: false
+          automatic_line_breaks: true
+          automatic_links: false
+          escape_markup: false
+          smartypants: false
+          antlers: false
+          display: Description
+          type: markdown
+          icon: markdown
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: facebook
+        field:
+          input_type: text
+          antlers: false
+          display: Facebook
+          type: text
+          icon: text
+          width: 33
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: instagram
+        field:
+          input_type: text
+          antlers: false
+          display: Instagram
+          type: text
+          icon: text
+          width: 33
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: linkedin
+        field:
+          input_type: text
+          antlers: false
+          display: LinkedIn
+          type: text
+          icon: text
+          width: 33
+          listable: hidden
+          instructions_position: above
+          read_only: false
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+      -
+        handle: owner
+        field:
+          max_items: 1
+          mode: select
+          display: Owner
+          type: users
+          icon: users
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: industry
+        field:
+          max_items: 1
+          mode: default
+          create: true
+          display: Industry
+          type: terms
+          icon: taxonomy
+          width: 33
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          taxonomies:
+            - industries
+      -
+        handle: type
+        field:
+          max_items: 1
+          mode: default
+          create: true
+          display: Type
+          type: terms
+          icon: taxonomy
+          width: 33
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          taxonomies:
+            - types
+      -
+        handle: logo
+        field:
+          mode: grid
+          container: assets
+          restrict: false
+          allow_uploads: true
+          show_filename: true
+          max_files: 1
+          display: Logo
+          type: assets
+          icon: assets
+          listable: hidden
+          instructions_position: above
+          read_only: false
+title: Companies

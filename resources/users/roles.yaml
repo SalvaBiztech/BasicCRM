@@ -1,0 +1,4 @@
+team:
+  title: Team
+  permissions:
+    - 'access cp'

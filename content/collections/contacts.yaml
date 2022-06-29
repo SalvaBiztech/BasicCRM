@@ -1,0 +1,13 @@
+title: Contacts
+template: contacts/show
+layout: layout
+taxonomies:
+  - stages
+  - statuses
+  - sources
+revisions: false
+route: '{parent_uri}/{id}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private

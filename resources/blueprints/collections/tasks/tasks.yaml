@@ -1,0 +1,188 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: type
+        field:
+          options:
+            To-do: null
+            Call: null
+            Email: null
+          multiple: false
+          max_items: 1
+          clearable: true
+          searchable: true
+          taggable: false
+          push_tags: true
+          cast_booleans: false
+          default: To-do
+          display: Type
+          type: select
+          icon: select
+          width: 33
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: priority
+        field:
+          options:
+            None: null
+            Low: null
+            Medium: null
+            High: null
+          multiple: false
+          max_items: 1
+          clearable: true
+          searchable: true
+          taggable: false
+          push_tags: true
+          cast_booleans: false
+          default: None
+          display: Priority
+          type: select
+          icon: select
+          width: 33
+          listable: true
+          instructions_position: above
+          read_only: false
+      -
+        handle: status
+        field:
+          options:
+            'Due Today': null
+            Overdue: null
+            Upcoming: null
+            'Most Engaged': null
+            Completed: null
+          multiple: false
+          max_items: 1
+          clearable: true
+          searchable: true
+          taggable: false
+          push_tags: true
+          cast_booleans: false
+          display: Status
+          type: select
+          icon: select
+          width: 33
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: due_date
+        field:
+          mode: single
+          time_enabled: false
+          time_seconds_enabled: false
+          full_width: true
+          inline: false
+          columns: 1
+          rows: 1
+          display: 'Due date'
+          type: date
+          icon: date
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          width: 33
+          earliest_date: '2022-06-29'
+      -
+        handle: reminder
+        field:
+          multiple: false
+          clearable: false
+          searchable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          display: Reminder
+          type: select
+          icon: select
+          width: 33
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: set_to_repeat
+        field:
+          default: false
+          display: 'Set to repeat'
+          type: toggle
+          icon: toggle
+          width: 33
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: notes
+        field:
+          type: markdown
+          localizable: true
+          display: Notes
+          instructions_position: above
+          listable: hidden
+          read_only: false
+          restrict: false
+          automatic_line_breaks: true
+          automatic_links: false
+          escape_markup: false
+          smartypants: false
+          antlers: false
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+      -
+        handle: date
+        field:
+          type: date
+          required: true
+          validate:
+            - required
+          instructions_position: above
+          listable: hidden
+          read_only: false
+          mode: single
+          earliest_date: '2022-06-29'
+          time_enabled: false
+          time_seconds_enabled: false
+          full_width: false
+          inline: false
+          columns: 1
+          rows: 1
+      -
+        handle: associate
+        field:
+          mode: default
+          display: Associate
+          type: collections
+          icon: collections
+          instructions: 'Associate with records'
+          listable: hidden
+          instructions_position: above
+          read_only: false
+      -
+        handle: assigned
+        field:
+          max_items: 1
+          mode: select
+          display: Assigned
+          type: users
+          icon: users
+          listable: hidden
+          instructions_position: above
+          read_only: false
+title: Tasks
